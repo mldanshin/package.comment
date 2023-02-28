@@ -1,0 +1,82 @@
+.comment {
+    position: relative;
+    user-select: none;
+}
+
+.comment__header {
+    margin: 0 auto;
+    text-align: center;
+    border-width: 0;
+    &, &:hover, &:active {
+        background-color: transparent;
+    }
+}
+
+.comment__header:focus {
+	outline-style: dotted;
+	outline-width: thin;
+}
+
+.comment__header:hover {
+    cursor: pointer;
+}
+
+.comment__form {
+    margin: 0 1rem;
+    @media screen and (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+    }
+    @media screen and (min-width: 701px) {
+        display: grid;
+        align-items: center;
+    }
+    @media screen and (min-width: 701px) and (max-width: 900px) {
+        grid-template-columns: 1fr 7fr;
+    }
+    @media screen and (min-width: 901px) {
+        grid-template-columns: 1fr 10fr;
+    }
+}
+
+.comment__form > input {
+    height: 2rem;
+}
+
+.comment__form > textarea {
+    resize: vertical;
+}
+
+.comment-form-section__label {
+
+}
+
+.comment-form-section__label_required {
+    &:after {
+        content: "\002A";
+        color: red;
+    }
+}
+
+.comment-form-section__input {
+
+}
+
+.comment-form-section__help {
+    margin-bottom: 0.5rem;
+    color: #8f8f9d;
+    @media screen and (min-width: 700px) {
+        grid-column: 2;
+    }
+} 
+
+.comment-form__submit {
+    @media screen and (max-width: 700px) {
+        align-self: flex-end;
+    }
+    @media screen and (min-width: 701px) {
+        grid-column: 2;
+        justify-self: end;
+    }
+}
